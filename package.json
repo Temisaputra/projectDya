@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 8081",
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "start": "http-server -p 8081",
+    "deploy": "gh-pages -d ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "http-server": "^14.1.1"
   }
 }
