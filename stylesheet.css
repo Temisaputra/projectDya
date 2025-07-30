@@ -1346,6 +1346,7 @@ o @keyframes bannar_come {
   margin: 0 auto;
   padding-top: 30px;
   position: relative;
+  margin-top: 220px;
 }
 .balloon > div {
   width: 104px;
@@ -1601,4 +1602,14 @@ h1 {
   text-align: center;
   color: white;
   font-size: 3.5em;
+}
+
+.fireworks {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: black; /* opsional */
+  z-index: -9999999; /* di atas semua elemen lain */
 }
