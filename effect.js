@@ -142,6 +142,8 @@ $("document").ready(function () {
 
   $("#cake_fadein").click(function () {
     $(".cake").fadeIn("slow");
+    $(".cakes").fadeIn("slow");
+
     $(this)
       .fadeOut("slow")
       .delay(3000)
