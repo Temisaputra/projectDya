@@ -1,5 +1,5 @@
 body {
-  /*background-color: #FFDAB9;	*/
+  /* background-color: #ffdab9; */
   background-color: #000;
   -webkit-transition: background-color linear 5s;
   -moz-transition: background-color linear 5s;
@@ -12,19 +12,7 @@ body {
   display: none;
 }
 .peach {
-  background-image: -webkit-gradient(
-    radial,
-    50% 50%,
-    0,
-    50% 50%,
-    100,
-    color-stop(0%, #374566),
-    color-stop(100%, #010203)
-  );
-  background-image: -webkit-radial-gradient(#374566, #010203);
-  background-image: -moz-radial-gradient(#374566, #010203);
-  background-image: -o-radial-gradient(#374566, #010203);
-  background-image: radial-gradient(#374566, #010203);
+  background-color: #0b0b45;
 }
 .peach-after {
   -webkit-animation: peach_alive linear 8s infinite;
@@ -36,90 +24,90 @@ body {
 
 @-webkit-keyframes peach_alive {
   0% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
   25% {
-    background-color: #ffe4b5;
+    background-color: #1c1c6a;
   }
   50% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
   75% {
-    background-color: #ffefd5;
+    background-color: #2a2a80;
   }
   100% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
 }
 @-moz-keyframes peach_alive {
   0% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
   25% {
-    background-color: #ffe4b5;
+    background-color: #1c1c6a;
   }
   50% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
   75% {
-    background-color: #ffefd5;
+    background-color: #2a2a80;
   }
   100% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
 }
 
 @-o-keyframes peach_alive {
   0% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
   25% {
-    background-color: #ffe4b5;
+    background-color: #1c1c6a;
   }
   50% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
   75% {
-    background-color: #ffefd5;
+    background-color: #2a2a80;
   }
   100% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
 }
 
 @-ms-keyframes peach_alive {
   0% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
   25% {
-    background-color: #ffe4b5;
+    background-color: #1c1c6a;
   }
   50% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
   75% {
-    background-color: #ffefd5;
+    background-color: #2a2a80;
   }
   100% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
 }
 
 @keyframes peach_alive {
   0% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
   25% {
-    background-color: #ffe4b5;
+    background-color: #1c1c6a;
   }
   50% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
   75% {
-    background-color: #ffefd5;
+    background-color: #2a2a80;
   }
   100% {
-    background-color: #ffdab9;
+    background-color: #0b0b45;
   }
 }
 
@@ -985,7 +973,7 @@ audio {
   -ms-transform: translate(0px, -500px);
   transform: translate(0px, -500px);
   position: relative;
-  top: -95px;
+  top: 0;
   z-index: -9999;
 }
 .bannar-come {
@@ -1339,6 +1327,7 @@ o @keyframes bannar_come {
   margin: 0 auto;
   position: relative;
   top: 0; */
+  width: 100%;
   display: none;
 }
 .balloon {
@@ -1440,13 +1429,14 @@ o @keyframes bannar_come {
   content: "▲";
   font-size: 1em;
 }
-span {
+i {
   font-size: 4.8em;
   color: white;
   position: relative;
   top: 30px;
   left: 50%;
   margin-left: -27px;
+  font-style: normal;
 }
 /*BALLOON 1 4*/
 @-webkit-keyframes balloon1 {
@@ -1612,4 +1602,12 @@ h1 {
   left: 0;
   background: black; /* opsional */
   z-index: -9999999; /* di atas semua elemen lain */
+  transition: background 1s ease; /* <== tambahkan ini */
+}
+
+.heart {
+  display: inline-block;
+  font-size: 1.5em;
+  vertical-align: middle;
+  margin-left: 5px;
 }

@@ -384,3 +384,62 @@ p{
     opacity: 1;
   }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Langar&display=swap");
+
+@font: "Langar";
+
+.heading {
+  font-size: 48px;
+  text-align: center;
+  font-family: @font;
+  display:none;
+
+  .word {
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    text-shadow: 0 1px black, 0 3px white;
+
+    &>span {
+      opacity: 0;
+      display: inline-block;
+
+      &.active {
+        opacity: 1;
+        animation-name: zoomInUp;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+      }
+    }
+  }
+}
+
+@keyframes zoomInUp {
+  from {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+span {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  margin-left: 0 !important;
+}
+
+#confetti {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
