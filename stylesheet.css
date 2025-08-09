@@ -1287,8 +1287,8 @@ o @keyframes bannar_come {
   font-family: "Signika", sans-serif;
   font-size: 30px;
   text-transform: uppercase;
-  color: #c4515c;
-  text-shadow: 2px 2px 2px #fff;
+  color: #fff;
+  text-shadow: 2px 2px 2px #000;
   display: none;
   font-weight: bold;
 }
@@ -1610,4 +1610,19 @@ h1 {
   font-size: 1.5em;
   vertical-align: middle;
   margin-left: 5px;
+}
+
+#makeItRain {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4081;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2em;
+  z-index: 9999999;
 }

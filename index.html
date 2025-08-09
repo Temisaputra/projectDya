@@ -39,25 +39,25 @@
 	<div class="loading"></div>
 	<audio class="song" controls loop>
         <source src="hbd.mp3"></source>
-	   Your browser isn't invited for super fun audio time.
+		Your browser isn't invited for super fun audio time.
     </audio>
     <div class="balloons text-center" id="b1">
-    	<h2 style="color:#F2B300;">H</h2>
+		<h2 style="color:#F2B300;">H</h2>
     </div>
     <div class="balloons text-center" id="b2">
-    	<h2 style="color:#0719D4;">B</h2>
+		<h2 style="color:#0719D4;">B</h2>
     </div>
 	<div class="balloons text-center" id="b3">
     	<h2 style="color:#D14D39;">D</h2>
     </div>
 	<div class="balloons text-center" id="b4">
-    	<h2 style="color:#8FAD00;">X</h2>
+		<h2 style="color:#8FAD00;">X</h2>
     </div>
 	<div class="balloons text-center" id="b5">
-    	<h2 style="color:#8377E4;">O</h2>
+		<h2 style="color:#8377E4;">O</h2>
     </div>
     <div class="balloons text-center" id="b6">
-    	<h2 style="color:#99C96A;">L</h2>
+		<h2 style="color:#99C96A;">L</h2>
     </div>
     <div class="balloons text-center" id="b7">
     	<h2 style="color:#20CFB4;">A</h2>
@@ -92,11 +92,12 @@
 			</div>
 			
 			<div class="container2">
-				<!-- <div style="display:flex; justify-content: center; flex-direction: column;"></div>
-				<h2>Happy <br> Birrrrrthday</h2>
-				<h1>(name)</h1>
-				<canvas id="confetti"></canvas> -->
-				<div class="balloon">
+				<div class="emoji-container">
+					<span class="emoji">🎊</span>
+					<span class="emoji">🎉</span>
+				</div>
+				<span id="makeItRain" style="display: none;"></span>
+					<div class="balloon">
 					<div><i>☺</i>
 					</div>
 					<div><i>B</i>
@@ -110,10 +111,7 @@
 					<div><i>☺</i>
 					</div>
 				</div>
-				
 				<div class="fireworks"></div>
-
-			
 			</div>
 		</div>
 		
@@ -216,6 +214,7 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 <script src="effect.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

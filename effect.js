@@ -174,7 +174,7 @@ $("document").ready(function () {
     // $("#b3").attr("id", "b33");
     // $("#b4").attr("id", "b44");
     // $("#b5").attr("id", "b55");
-    // $("#b6").attr("id", "b66");
+    // $("#b6").  attr("id", "b66");
     // $("#b7").attr("id", "b77");
     // $("#b11").animate({ top: 240, left: vw - 350 }, 500);
     // $("#b22").animate({ top: 240, left: vw - 250 }, 500);
@@ -187,6 +187,8 @@ $("document").ready(function () {
     // $(".balloons h2").fadeIn(3000);
     $(".container2").css("display", "block");
     $(".container2").fadeIn("slow");
+    startFireworksWithSound();
+    makeItRain();
     $(this)
       .fadeOut("slow")
       .delay(3000)
@@ -197,6 +199,7 @@ $("document").ready(function () {
   });
 
   $("#story").click(function () {
+    stopFireworksWithSound();
     $(this).fadeOut("slow");
     $(".cake")
       .fadeOut("fast")
@@ -210,7 +213,7 @@ $("document").ready(function () {
     function msgLoop(i) {
       $("p:nth-child(" + i + ")")
         .fadeOut("slow")
-        .delay(800)
+        .delay(1000)
         .promise()
         .done(function () {
           i = i + 1;
@@ -238,10 +241,33 @@ $("document").ready(function () {
 //alert('hello');
 
 const container = document.querySelector(".fireworks");
-const fireworks = new Fireworks.default(container);
+const options = {
+  sound: {
+    enable: true, // Mengaktifkan suara
+    files: [
+      "sounds/explosionq0.mp3",
+      "sounds/explosion1.mp3",
+      "sounds/explosion2.mp3",
+    ],
+    volume: {
+      min: 4,
+      max: 8,
+    },
+  },
+  // konfigurasi lain seperti:
+  acceleration: 1.05,
+  friction: 0.95,
+  gravity: 1.5,
+  particles: 50,
+  trace: 3,
+  explosion: 5,
+  hue: { min: 0, max: 360 },
+};
+
+const fireworks = new Fireworks.default(container, options);
 container.style.background = "#0a0a23"; // atau gradient
 
-fireworks.start();
+// fireworks.start();
 
 var count = 0;
 const speed = 300;
@@ -826,3 +852,70 @@ document.addEventListener("DOMContentLoaded", function () {
     confetti.resize();
   });
 });
+
+function makeItRain() {
+  document.getElementById("makeItRain").disabled = true;
+  console.log("Making it rain!");
+  var end = Date.now() + 3 * 1000; // durasi 3 detik
+
+  var colors = [
+    "#FF6F61", // Coral
+    "#6B5B95", // Purple-gray
+    "#88B04B", // Olive green
+    "#F7CAC9", // Light pink
+    "#92A8D1", // Soft blue
+    "#955251", // Mauve
+    "#B565A7", // Orchid
+    "#009B77", // Teal
+    "#DD4124", // Fiery red-orange
+    "#45B8AC", // Aqua
+  ];
+
+  var timer = setInterval(() => {
+    confetti({
+      particleCount: 8, // cukup sedikit
+      angle: 60,
+      spread: 60,
+      origin: { x: 0 },
+      colors: colors,
+    });
+    confetti({
+      particleCount: 8,
+      angle: 120,
+      spread: 60,
+      origin: { x: 1 },
+      colors: colors,
+    });
+
+    if (Date.now() > end) {
+      clearInterval(timer);
+      document.getElementById("makeItRain").disabled = false;
+    }
+  }, 150); // jeda 150ms antar tembakan
+}
+
+function playRandomExplosion() {
+  const files = [
+    "sounds/explosion0.mp3",
+    "sounds/explosion1.mp3",
+    "sounds/explosion2.mp3",
+  ];
+  const audio = new Audio(files[Math.floor(Math.random() * files.length)]);
+  audio.volume = 0.8;
+  audio.play();
+}
+
+function startFireworksWithSound() {
+  fireworks.start();
+  soundEnabled = true;
+  soundInterval = setInterval(playRandomExplosion, 800);
+}
+
+function stopFireworksWithSound() {
+  fireworks.stop();
+  soundEnabled = false;
+  if (soundInterval) {
+    clearInterval(soundInterval);
+    soundInterval = null;
+  }
+}

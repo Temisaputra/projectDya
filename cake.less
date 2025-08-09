@@ -443,3 +443,39 @@ span {
   height: 100%;
   width: 100%;
 }
+
+.emoji-container {
+  position: fixed;
+  /* biar selalu di posisi layar */
+  top: 50%;
+  /* di tengah vertikal */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  /* kiri & kanan */
+  padding: 0 20px;
+  /* jarak dari tepi layar */
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* biar nggak ganggu klik */
+}
+
+.emoji {
+  font-size: clamp(50px, 15vw, 200px);
+  /* responsive font size */
+}
+
+/* Untuk layar kecil (mobile) */
+@media (max-width: 600px) {
+  .emoji-container {
+    top: 35%;
+    /* naikkan lagi di mobile */
+    padding: 0 5px;
+  }
+
+  .emoji {
+    font-size: clamp(100px, 25vw, 280px);
+    /* lebih besar di mobile */
+  }
+}
