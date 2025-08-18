@@ -213,13 +213,13 @@ $("document").ready(function () {
     function msgLoop(i) {
       $("p:nth-child(" + i + ")")
         .fadeOut("slow")
-        .delay(1000)
+        .delay(3000)
         .promise()
         .done(function () {
           i = i + 1;
           $("p:nth-child(" + i + ")")
             .fadeIn("slow")
-            .delay(1000);
+            .delay(3000);
           if (i == 50) {
             $("p:nth-child(49)")
               .fadeOut("slow")
@@ -271,23 +271,15 @@ container.style.background = "#0a0a23"; // atau gradient
 
 var count = 0;
 const speed = 300;
-const colors = [
-  "ff6f61", // Coral
-  "f06292", // Pink Rose
-  "ba68c8", // Lavender Purple
-  "9575cd", // Soft Purple
-  "7986cb", // Blue Grey
-  "4fc3f7", // Sky Blue
-  "4dd0e1", // Cyan Blue
-  "4db6ac", // Aqua Teal
-  "81c784", // Soft Green
-  "aed581", // Lime Green
-  "dce775", // Pastel Yellow
-  "fff176", // Soft Yellow
-  "ffd54f", // Light Orange
-  "ffb74d", // Peach
-  "ff8a65", // Light Red-Orange
-  "a1233b", // ❤️ Deep Maroon (merah hati)
+colors = [
+  "ff9a9e",
+  "fecfef", // soft pink
+  "ff758c",
+  "ff7eb3", // pink gradasi lebih strong
+  "fda4af",
+  "fbc2eb", // baby pink
+  "ff6a88",
+  "ff99ac", // pink cerah
 ];
 
 const elm = document.querySelector(".heading");
